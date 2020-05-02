@@ -63,6 +63,13 @@
     }
 
     async function getFriendship() {
+      const friend = liff.getFriendship();
+      document.getElementById("friendship").append(friend.friendFlag)
+      if (!friend.friendFlag) {
+        if (confirm("คุณยังไม่ได้เพิ่มไลน์ 'บ้านซอสทิพย์' เป็นเพื่ิอน จะเพิ่มเลยไหม?")) {
+          window.location = "https://line.me/R/ti/p/@saucethip"
+        }
+      }
     }
 
     async function sendMsg() {
@@ -116,7 +123,7 @@
       getEnvironment()
       getUserProfile()
       getContext()
-      // getFriendship()
+      getFriendship()
       // createUniversalLink()
     }
     main()
